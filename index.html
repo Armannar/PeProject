@@ -48,6 +48,11 @@
             color: #333;
             margin-top: 20px;
         }
+        #message {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +65,7 @@
     
     <!-- Display the rooster's name -->
     <p id="rooster-name"></p>
+    <p id="message"></p>
 
     <script>
         // JavaScript function to update the rooster's name
@@ -67,12 +73,10 @@
             // Get the input value
             const name = document.getElementById('name-input').value;
             
-            // Display the name on the page
-            if (name) {
-                document.getElementById('rooster-name').innerText = `This majestic rooster is named ${name}!`;
-            } else {
-                document.getElementById('rooster-name').innerText = "Please enter a name for the rooster.";
-            }
+            // Set the name to "Victor" and display a message
+            const betterName = "Victor";
+            document.getElementById('rooster-name').innerText = `This majestic rooster is named ${betterName}!`;
+            document.getElementById('message').innerText = `You entered "${name}", but a better name for this rooster is ${betterName}.`;
         }
     </script>
 </body>
