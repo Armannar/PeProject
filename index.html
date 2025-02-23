@@ -10,29 +10,70 @@
             text-align: center;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
         h1 {
             color: #333;
-            margin-top: 20px;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto;
+            margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        p {
-            font-size: 1.2em;
-            color: #555;
+        input {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #rooster-name {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <h1>Behold the Giant Rooster!</h1>
     <img src="https://bagiraclub.ru/images/bagiraclub/2017/02/67.jpg" alt="Giant Rooster">
-    <p>This majestic rooster rules the barnyard!</p>
+    
+    <!-- Input for the rooster name -->
+    <input type="text" id="name-input" placeholder="Enter the rooster's name">
+    <button onclick="updateName()">Submit</button>
+    
+    <!-- Display the rooster's name -->
+    <p id="rooster-name"></p>
+
+    <script>
+        // JavaScript function to update the rooster's name
+        function updateName() {
+            // Get the input value
+            const name = document.getElementById('name-input').value;
+            
+            // Display the name on the page
+            if (name) {
+                document.getElementById('rooster-name').innerText = `This majestic rooster is named ${name}!`;
+            } else {
+                document.getElementById('rooster-name').innerText = "Please enter a name for the rooster.";
+            }
+        }
+    </script>
 </body>
 </html>
